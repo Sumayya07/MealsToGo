@@ -7,6 +7,7 @@ export default function App() {
     <>
     <SafeAreaView style={styles.container}>
     <View style={styles.search}>
+    // Changes in search bar 
       <Text>Search</Text>  
     </View>
     <View style={styles.list}>
