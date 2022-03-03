@@ -8,7 +8,7 @@ import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/osw
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import { theme } from './src/infrastructure/theme'
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurants.screen';
-import { SafeArea } from "../../../components/utility/safe-area.component"
+import { SafeArea } from "./src/components/utility/safe-area.component"
 
 
 const Tab = createBottomTabNavigator();
