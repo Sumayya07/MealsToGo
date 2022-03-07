@@ -8,7 +8,7 @@ import { SafeArea } from "../../../components/utility/safe-area.component"
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context"
 import { ActivityIndicator, Colors } from 'react-native-paper';
 
-
+// Restaurant Screen
 const SearchContainer = styled.View`
    padding: ${(props) => props.theme.space[3]}
    background-color: ${(props) => props.theme.colors.bg.primary}
