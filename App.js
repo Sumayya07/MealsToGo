@@ -60,6 +60,7 @@ export default function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
+    <LocationContextProvider>
       <RestaurantsContextProvider>
        <NavigationContainer>
         <Tab.Navigator
@@ -75,6 +76,7 @@ export default function App() {
         </Tab.Navigator>
        </NavigationContainer>
       </RestaurantsContextProvider>
+      </LocationContextProvider>
     </ThemeProvider>
     <ExpoStatusBar style='auto' /> 
     </>
