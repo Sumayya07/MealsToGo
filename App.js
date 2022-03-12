@@ -4,9 +4,7 @@ import { ThemeProvider } from 'styled-components/native';
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald';
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import { theme } from './src/infrastructure/theme'
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context"
-import { LocationContextProvider } from './src/services/location/location.context';
-import { FavouritesContextProvider } from './src/services/favourites/favourites.context';
+
 import { AuthenticationContextProvider } from './src/services/authentication/authentication.context';
 import { Navigation } from './src/infrastructure/navigation/index';
 import firebase from "firebase/compat/app";
@@ -27,8 +25,6 @@ if (!firebase.apps.length) {
 }
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -37,26 +33,18 @@ export default function App() {
     Lato_400Regular,
   });
 
-  if(!oswaldLoaded || !latoLoaded){
+  if (!oswaldLoaded || !latoLoaded) {
     return null;
   }
 
   return (
     <>
-    <ThemeProvider theme={theme}>
-     <AuthenticationContextProvider>
-     <FavouritesContextProvider>
-      <LocationContextProvider>
-       <RestaurantsContextProvider>
-        <Navigation />
-       </RestaurantsContextProvider>
-      </LocationContextProvider>
-     </FavouritesContextProvider>
-     </AuthenticationContextProvider>
-    <ExpoStatusBar style='auto' /> 
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <AuthenticationContextProvider>
+          <Navigation />
+        </AuthenticationContextProvider>
+      </ThemeProvider>
+      <ExpoStatusBar style="auto" />
     </>
   );
 }
-
-
