@@ -7,7 +7,8 @@ import { theme } from './src/infrastructure/theme'
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context"
 import { LocationContextProvider } from './src/services/location/location.context';
 import { FavouritesContextProvider } from './src/services/favourites/favourites.context';
-import { Navigation } from './src/infrastructure/navigation';
+import { AuthenticationContextProvider } from './src/services/authentication/authentication.context';
+import { Navigation } from './src/infrastructure/navigation/index';
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
@@ -43,6 +44,7 @@ export default function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
+     <AuthenticationContextProvider>
      <FavouritesContextProvider>
       <LocationContextProvider>
        <RestaurantsContextProvider>
@@ -50,8 +52,9 @@ export default function App() {
        </RestaurantsContextProvider>
       </LocationContextProvider>
      </FavouritesContextProvider>
-    </ThemeProvider>
+     </AuthenticationContextProvider>
     <ExpoStatusBar style='auto' /> 
+    </ThemeProvider>
     </>
   );
 }
