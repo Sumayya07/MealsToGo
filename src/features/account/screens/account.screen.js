@@ -11,8 +11,6 @@ import {
   AnimationWrapper,
 } from "../components/account.styles";
 
-// Account Screen
-
 export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
